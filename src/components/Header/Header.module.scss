@@ -1,0 +1,54 @@
+@use "../../styles/variables" as *;
+
+.header {
+  @include card;
+  position: sticky;
+  top: 12px;
+  z-index: 10;
+  background: rgba($card, 0.85);
+  backdrop-filter: blur(10px);
+}
+
+.nav {
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.list {
+  display: flex;
+  justify-content: flex-start;
+  gap: 4px;
+  width: max-content;
+  padding: 8px 12px;
+
+  @media (min-width: $bp-lg) {
+    justify-content: flex-end;
+    width: 100%;
+    gap: 12px;
+    padding: 12px 24px;
+  }
+}
+
+.link {
+  display: block;
+  padding: 8px 10px;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  color: $text-muted;
+  transition: color 0.2s;
+
+  &:hover,
+  &:focus-visible {
+    color: $text;
+  }
+}
+
+.active {
+  color: $accent;
+
+  &:hover,
+  &:focus-visible {
+    color: $accent;
+  }
+}

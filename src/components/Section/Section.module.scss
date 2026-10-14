@@ -1,0 +1,25 @@
+@use "../../styles/variables" as *;
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.title {
+  position: relative;
+  padding-bottom: 8px;
+  font-size: 24px;
+  font-weight: 600;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 4px;
+    border-radius: 3px;
+    background: linear-gradient(to right, $accent, $accent-dark);
+  }
+}

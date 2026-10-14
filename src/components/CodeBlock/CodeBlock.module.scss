@@ -1,0 +1,52 @@
+@use "../../styles/variables" as *;
+
+.window {
+  overflow: hidden;
+  border: 1px solid $border;
+  border-radius: $radius-sm;
+  background: $card-alt;
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 16px;
+  border-bottom: 1px solid $border;
+  background: #252526;
+}
+
+.dots {
+  display: flex;
+  gap: 6px;
+
+  i {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ff5f56;
+
+    &:nth-child(2) {
+      background: #ffbd2e;
+    }
+
+    &:nth-child(3) {
+      background: #27c93f;
+    }
+  }
+}
+
+.fileName {
+  font-size: 13px;
+  color: $text-muted;
+}
+
+.pre {
+  overflow-x: auto;
+  padding: 16px;
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #e6e6e6;
+  tab-size: 2;
+}

@@ -1,0 +1,65 @@
+@use "../../styles/variables" as *;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: 100%;
+  padding: 20px;
+  border: 1px solid $border;
+  border-radius: $radius-sm;
+  background: $card-alt;
+  transition: border-color 0.2s, transform 0.2s;
+
+  &:hover {
+    border-color: rgba($accent, 0.5);
+    transform: translateY(-2px);
+  }
+}
+
+.name {
+  font-size: 18px;
+  font-weight: 500;
+  color: $accent;
+}
+
+.description {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.6;
+  color: $text-muted;
+}
+
+.stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tag {
+  padding: 3px 10px;
+  font-size: 12px;
+  border-radius: 8px;
+  background: $border;
+}
+
+.links {
+  display: flex;
+  gap: 16px;
+  margin-top: auto;
+  padding-top: 4px;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.2s;
+
+  &:hover,
+  &:focus-visible {
+    color: $accent;
+  }
+}

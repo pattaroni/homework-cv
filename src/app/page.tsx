@@ -1,69 +1,70 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import Header from "@/components/Header/Header";
+import Sidebar from "@/components/Sidebar/Sidebar";
+import Section from "@/components/Section/Section";
+import CodeBlock from "@/components/CodeBlock/CodeBlock";
+import Timeline from "@/components/Timeline/Timeline";
+import ProjectCard from "@/components/ProjectCard/ProjectCard";
+import {
+  codeExample,
+  education,
+  languages,
+  navItems,
+  profile,
+  projects,
+  skills,
+} from "@/data/cv";
+import css from "./page.module.scss";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>
-            To get started, edit the{" "}
-            <code className={styles.code}>page.tsx</code> file.
-          </h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+    <div className={css.container}>
+      <Header items={navItems} />
+      <div className={css.layout}>
+        <Sidebar />
+        <main className={css.main}>
+          <Section id="about" title="About me">
+            <p className={css.text}>{profile.about}</p>
+          </Section>
+
+          <Section id="skills" title="Skills">
+            <ul className={css.list}>
+              {skills.map((skill) => (
+                <li key={skill}>{skill}</li>
+              ))}
+            </ul>
+          </Section>
+
+          <Section id="code" title="Code Examples">
+            <CodeBlock fileName={codeExample.fileName} code={codeExample.code} />
+          </Section>
+
+          <Section id="education" title="Education">
+            {education.map((group) => (
+              <Timeline key={group.title} {...group} />
+            ))}
+          </Section>
+
+          <Section id="languages" title="Languages">
+            <ul className={css.list}>
+              {languages.map(({ name, level }) => (
+                <li key={name}>
+                  {name} <span className={css.muted}>({level})</span>
+                </li>
+              ))}
+            </ul>
+          </Section>
+
+          <Section id="projects" title="Projects">
+            <ul className={css.projects}>
+              {projects.map((project) => (
+                <li key={project.name}>
+                  <ProjectCard {...project} />
+                </li>
+              ))}
+            </ul>
+          </Section>
+        </main>
+      </div>
     </div>
   );
 }

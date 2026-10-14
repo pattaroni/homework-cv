@@ -1,0 +1,61 @@
+@use "../../styles/variables" as *;
+
+.head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.icon {
+  @include icon-box;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.list {
+  margin-left: 45px;
+  list-style: none;
+}
+
+.item {
+  position: relative;
+  padding-bottom: 8px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -25px;
+    left: -26px;
+    width: 1px;
+    height: calc(100% + 50px);
+    background: $border;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: -30px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: $accent;
+    box-shadow: 0 0 0 4px $border;
+  }
+}
+
+.name {
+  margin-bottom: 6px;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.period {
+  font-size: 14px;
+  color: $accent;
+}

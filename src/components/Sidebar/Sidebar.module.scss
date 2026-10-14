@@ -1,0 +1,112 @@
+@use "../../styles/variables" as *;
+
+.sidebar {
+  @include card;
+  padding: 24px 20px;
+
+  @media (min-width: $bp-lg) {
+    position: sticky;
+    top: 100px;
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+}
+
+.avatar {
+  display: grid;
+  place-items: center;
+  width: 140px;
+  height: 140px;
+  font-size: 48px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: $bg;
+  border-radius: 28px;
+  background: linear-gradient(135deg, $accent, $accent-dark);
+  box-shadow: $shadow;
+}
+
+.name {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.status {
+  padding: 4px 14px;
+  font-size: 12px;
+  border-radius: 8px;
+  background: $card-alt;
+}
+
+.separator {
+  margin: 24px 0;
+  border: none;
+  border-top: 1px solid $border;
+}
+
+.contacts {
+  display: grid;
+  gap: 20px;
+
+  @media (min-width: $bp-md) and (max-width: $bp-lg - 1px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.icon {
+  @include icon-box;
+}
+
+.contactText {
+  min-width: 0;
+}
+
+.label {
+  margin-bottom: 2px;
+  font-size: 11px;
+  text-transform: uppercase;
+  color: $text-muted;
+}
+
+.value {
+  display: block;
+  font-size: 14px;
+  font-style: normal;
+  overflow-wrap: anywhere;
+  transition: color 0.2s;
+
+  &:is(a):hover,
+  &:is(a):focus-visible {
+    color: $accent;
+  }
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.social {
+  display: block;
+  color: $text-muted;
+  transition: color 0.2s;
+
+  &:hover,
+  &:focus-visible {
+    color: $accent;
+  }
+}

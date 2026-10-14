@@ -34,6 +34,8 @@ export const skills = [
   "Next.js",
   "Zustand",
   "Redux",
+  "Node.js",
+  "Express",
   "Git, GitHub / GitLab",
 ];
 

@@ -3,7 +3,7 @@ export const profile = {
   lastName: "Kyryk",
   status: "Student",
   about:
-    "Junior Front-End Developer who enjoys building fast, clean and accessible interfaces with Next.js and TypeScript. I like turning designs into polished products and keep learning something new every day.",
+    "Junior Front-End Developer at Kingsizer, an iGaming company, where I build fast, clean and accessible interfaces with Next.js and TypeScript. I like turning designs into polished products and keep learning something new every day.",
   contacts: [
     {
       type: "mail",

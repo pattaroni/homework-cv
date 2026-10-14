@@ -19,16 +19,11 @@
 }
 
 .avatar {
-  display: grid;
-  place-items: center;
   width: 140px;
   height: 140px;
-  font-size: 48px;
-  font-weight: 600;
-  letter-spacing: 2px;
-  color: $bg;
+  object-fit: cover;
   border-radius: 28px;
-  background: linear-gradient(135deg, $accent, $accent-dark);
+  background: $card-alt;
   box-shadow: $shadow;
 }
 

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Icon from "@/components/Icons/Icon";
 import { profile } from "@/data/cv";
 import css from "./Sidebar.module.scss";
@@ -8,10 +9,14 @@ export default function Sidebar() {
   return (
     <aside className={css.sidebar}>
       <div className={css.info}>
-        <div className={css.avatar} aria-hidden="true">
-          {firstName[0]}
-          {lastName[0]}
-        </div>
+        <Image
+          src="/avatar.jpg"
+          alt={`${firstName} ${lastName}`}
+          width={140}
+          height={140}
+          className={css.avatar}
+          preload
+        />
         <h1 className={css.name}>
           {firstName}
           <br />
